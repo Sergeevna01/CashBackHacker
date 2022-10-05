@@ -23,24 +23,18 @@ tasks.withType(JavaCompile) {
     options.encoding = 'UTF-8'
 }
 
-application {
-    mainModule = 'ru.netology.cashbackhacker'
-    mainClass = 'ru.netology.cashbackhacker.HelloApplication'
-}
-
 javafx {
     version = '11.0.2'
     modules = ['javafx.controls', 'javafx.fxml']
 }
 
 dependencies {
+    testImplementation 'org.testng:testng:7.1.0'
 
-    testImplementation("org.junit.jupiter:junit-jupiter-api:${junitVersion}")
-    testRuntimeOnly("org.junit.jupiter:junit-jupiter-engine:${junitVersion}")
 }
 
 test {
-    useJUnitPlatform()
+    useTestNG()
 }
 
 jlink {
